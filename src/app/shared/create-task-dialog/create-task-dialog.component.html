@@ -1,0 +1,27 @@
+<div fxLayout="row" fxLayoutAlign="space-between center">
+    <h1>New Task</h1>
+    <button mat-icon-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+</div>
+
+<form [formGroup]="newTaskForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+
+    <h3>Task Name</h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Task Name</mat-label>
+        <input matInput placeholder="Enter a task name" formControlName="taskName">
+    </mat-form-field>
+
+    <h3>Description</h3>
+    <mat-form-field class="description" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Describe this task in a few words..." formControlName="description"></textarea>
+    </mat-form-field>
+</form>
+
+<div fxLayoutAlign="space-around center">
+    <button mat-flat-button color="primary" (click)="submitForm()">
+        Create Task
+    </button>
+</div>

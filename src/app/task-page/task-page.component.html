@@ -1,0 +1,16 @@
+<div fxLayout="column" fxLayoutAlign="space-around center">
+    <button mat-flat-button color="primary" (click)="openCreateDialog()">
+        Create Task
+    </button>
+
+    <div cdkDropList class="example-list" (cdkDropListDropped)="drop($event)">
+        <mat-card class="example-box" *ngFor="let task of tasks; let i = index" cdkDrag fxLayout="column" fxLayoutAlign="space-around center">
+            <h3 *ngIf="task">{{task.taskName}} - Display Order: {{i}}</h3>
+            <mat-card-content>
+                <button mat-flat-button color="primary" (click)="openDialog(task, i)">
+                    View Details
+                </button>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+<form [formGroup]="updateTaskForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+    <h3>Task Name</h3>
+    <mat-form-field appearance="outline">
+        <mat-label>Task Name</mat-label>
+        <input matInput placeholder="Enter a task name" formControlName="taskName">
+    </mat-form-field>
+
+    <h3>Description</h3>
+    <mat-form-field class="description" appearance="outline">
+        <mat-label>Description</mat-label>
+        <textarea matInput placeholder="Describe this task in a few words..." formControlName="description"></textarea>
+    </mat-form-field>
+</form>
+
+<div>
+    <button mat-flat-button color="warn" (click)="update()">
+        Update
+    </button>
+</div>
+
+<h1>Comments</h1>
+ <div *ngFor="let comment of comments">
+    <h4>{{comment}}</h4>
+ </div>
+
+ <!-- make an array and assign comment to it and refres evertime new comment is added -->
+
+<form [formGroup]="commentForm" fxLayout="column" fxLayoutAlign="space-around stretch">
+    <h3>Comment On Task</h3>
+    <mat-form-field class="description" appearance="outline">
+        <mat-label>New Comment</mat-label>
+        <textarea matInput placeholder="Write a comment" formControlName="comment"></textarea>
+    </mat-form-field>
+</form>
+
+<div >
+    <button mat-flat-button color="primary" (click)="addComment()">
+        Add Comment
+    </button>
+</div>
